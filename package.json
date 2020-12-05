@@ -1,0 +1,19 @@
+{
+  "name": "digimedtest",
+  "version": "1.0.0",
+  "description": "read in some digimeds",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/grahamd99/digimedtest.git"
+  },
+  "author": "Graham Dodsworth",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/grahamd99/digimedtest/issues"
+  },
+  "homepage": "https://github.com/grahamd99/digimedtest#readme"
+}
