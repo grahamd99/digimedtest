@@ -1,0 +1,114 @@
+<%- include('partials/header'); -%>
+
+<H1>Digimeds rendered as html</H1>
+
+
+<H2>Patient details</H2>
+
+<table>
+  <tr>
+    <td>Patient NHS Number</td>
+    <td><%= nhsnumber %></td>
+  </tr>
+  <tr>
+    <td>Patient name</td>
+    <td><%= patGiven + ' ' + patFamily %></td>
+  </tr>
+  <tr>
+    <td>Patient DOB 1</td>
+    <td><%= patDOB1 %></td>
+  </tr>
+<table>
+
+<H2>Encounter details details</H2>
+
+<table>
+  <tr>
+    <td>Encounter status</td>
+    <td><%= encounterStatus %></td>
+  </tr>
+ <table>
+
+<H2>Vaccination details</H2>
+
+<table>
+  <tr>
+    <td>vaccineProcedure (SNOMED)</td>
+    <td><%= vaccineProcedureCode %></td>
+  </tr>
+  <tr>
+    <td>vaccineProcedure (display)</td>
+    <td><%= vaccineProcedureDisplay %></td>
+  </tr>
+  <tr>
+    <td>vaccineCode (SNOMED)</td>
+    <td><%= vaccineCodeSNOMED %></td>
+  </tr>
+  <tr>
+    <td>vaccineCode (Display)</td>
+    <td><%= vaccineCodeDisplay %></td>
+  </tr>
+  <tr>
+    <td>notGiven</td>
+    <td><%= notGiven %></tr>
+  <tr>
+    <td>dateChar</td>
+    <td><%= dateChar %></td>
+  </tr>
+  <tr>
+    <td>site of vacc Code (SNOMED)</td>
+    <td><%= siteCodeSNOMED %></td>
+  </tr>
+  <tr>
+    <td>site of vacc Code (Display)</td>
+    <td><%= siteCodeDisplay %></td>
+  </tr>
+    <tr>
+    <td>route of vacc Code (SNOMED)</td>
+    <td><%= routeCodeSNOMED %></td>
+  </tr>
+  <tr>
+    <td>route of vacc Code (Display)</td>
+    <td><%= routeCodeDisplay %></td>
+  </tr>
+  <tr>
+    <td>Batch Number</td>
+    <td><%= batchNumber %></td>
+  </tr>
+  <tr>
+    <td>Expiration date</td>
+    <td><%= expirationDate %></td>
+  </tr>
+<table>
+
+<H2>Organisation responsible for vaccination procedure details</H2>
+
+<table>
+  </tr>
+    <tr>
+    <td>Organisation ODS code</td>
+  </tr>
+  <tr>
+    <td>Organisation ODS display</td>
+  </tr>
+<table>
+
+<H2>Practitioner details</H2>
+
+<table>
+  <tr>
+    <td>Practitioner name</td>
+    <td><%= pracGiven + ' ' + pracFamily %></td>
+  </tr>
+  </tr>
+    <tr>
+    <td>Practitioner registration code</td>
+    <td><%= pracRegCode %></td>
+  </tr>
+  <tr>
+    <td>Practitioner registration body URI</td>
+    <td><%= pracRegCodeURI %></td>
+  </tr>
+<table>
+
+<%- include('partials/footer'); -%>

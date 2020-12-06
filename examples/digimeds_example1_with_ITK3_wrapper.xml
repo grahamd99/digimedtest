@@ -1,5 +1,103 @@
 <?xml version='1.0' encoding='utf-8'?>
 <Bundle xmlns="http://hl7.org/fhir">
+  <id value="27fe16d7-4102-4de7-ab58-2298f2070be7" />
+  <meta>
+    <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/ITK-Message-Bundle-1" />
+  </meta>
+  <identifier>
+    <system value="https://tools.ietf.org/html/rfc4122" />
+    <value value="d1c7cb5f-3eeb-4e51-99f1-a807a969b09f" />
+  </identifier>
+  <type value="message" />
+  <entry>
+    <fullUrl value="urn:uuid:8e91d432-57c2-4def-b5ee-158a96a52a4d" />
+    <resource>
+      <MessageHeader>
+        <id value="8e91d432-57c2-4def-b5ee-158a96a52a4d" />
+        <meta>
+          <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/ITK-MessageHeader-2" />
+        </meta>
+        <extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-ITK-MessageHandling-2">
+          <extension url="BusAckRequested">
+            <valueBoolean value="true" />
+          </extension>
+          <extension url="InfAckRequested">
+            <valueBoolean value="true" />
+          </extension>
+          <extension url="RecipientType">
+            <valueCoding>
+              <system value="https://fhir.nhs.uk/STU3/CodeSystem/ITK-RecipientType-1" />
+              <code value="FA" />
+              <display value="For Action" />
+            </valueCoding>
+          </extension>
+          <extension url="MessageDefinition">
+            <valueReference>
+              <reference value="https://fhir.nhs.uk/STU3/MessageDefinition/ITK-DM-Immunization-MessageDefinition-1" />
+            </valueReference>
+          </extension>
+          <extension url="SenderReference">
+            <valueString value="None" />
+          </extension>
+          <extension url="LocalExtension">
+            <valueString value="None" />
+          </extension>
+        </extension>
+        <event>
+          <system value="https://fhir.nhs.uk/STU3/CodeSystem/ITK-MessageEvent-2" />
+          <code value="ITK009D" />
+          <display value="ITK Digital Medicine Immunization Document" />
+        </event>
+        <receiver>
+          <reference value="urn:uuid:14aee0b7-0b7c-4c15-831e-d5028ee7eb41" />
+        </receiver>
+        <sender>
+          <reference value="urn:uuid:7a813c27-af49-4579-ad39-03cc59161126" />
+        </sender>
+        <timestamp value="2020-12-04T13:00:33+00:00" />
+        <source>
+          <endpoint value="Z124A1316" />
+        </source>
+        <focus>
+          <reference value="urn:uuid:c603c1c1-e0a8-4291-9799-4fb22fe0079d" />
+        </focus>
+      </MessageHeader>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="urn:uuid:7a813c27-af49-4579-ad39-03cc59161126" />
+    <resource>
+      <Organization>
+        <id value="7a813c27-af49-4579-ad39-03cc59161126" />
+        <meta>
+          <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-ITK-Header-Organization-1" />
+        </meta>
+        <identifier>
+          <system value="https://fhir.nhs.uk/Id/ods-organization-code" />
+          <value value="X26" />
+        </identifier>
+      </Organization>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="urn:uuid:14aee0b7-0b7c-4c15-831e-d5028ee7eb41" />
+    <resource>
+      <Organization>
+        <id value="14aee0b7-0b7c-4c15-831e-d5028ee7eb41" />
+        <meta>
+          <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-ITK-Header-Organization-1" />
+        </meta>
+        <identifier>
+          <system value="https://fhir.nhs.uk/Id/ods-organization-code" />
+          <value value="J82132" />
+        </identifier>
+      </Organization>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="urn:uuid:c603c1c1-e0a8-4291-9799-4fb22fe0079d" />
+    <resource>
+      <Bundle xmlns="http://hl7.org/fhir">
         <id value="c603c1c1-e0a8-4291-9799-4fb22fe0079d" />
         <meta>
           <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/ITK-Document-Bundle-1" />
@@ -466,4 +564,7 @@
             </Organization>
           </resource>
         </entry>
- </Bundle>
+      </Bundle>
+    </resource>
+  </entry>
+</Bundle>
