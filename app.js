@@ -11,9 +11,8 @@ var fileToParse = "./public/examples/digimeds_example1.xml";
 
 //global.fileToValidate = "test.xml";
 
+// Serve Static Assets
 app.use(express.static("public"));
-
-
 // Virtual Path Prefix '/static'
 app.use('/static', express.static('public'))
 
