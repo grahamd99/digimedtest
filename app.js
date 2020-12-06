@@ -7,11 +7,16 @@ var fs      = require('fs'),
 var parser = new xml2js.Parser();
 var app = express();
 var port = 3000;
-var fileToParse = "./examples/digimeds_example1.xml";
+var fileToParse = "./public/examples/digimeds_example1.xml";
 
 //global.fileToValidate = "test.xml";
 
 app.use(express.static("public"));
+
+
+// Virtual Path Prefix '/static'
+app.use('/static', express.static('public'))
+
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 
@@ -101,41 +106,13 @@ app.get("/single",function(req,res){
             global.hcsSNOMED           = result.Bundle.entry[i].resource[0].HealthcareService[0].type[0].coding[0].code[0].$.value;
             global.hcsDisplay          = result.Bundle.entry[i].resource[0].HealthcareService[0].type[0].coding[0].display[0].$.value;
           }
-
-
-
-
  */
         }
-
-
-
     });
 
     res.render("digimeds1.ejs");
     
   })
-});
-
-
-
-app.get("/validator",function(req,res){
-  console.log("*****************GET*****************");
-  console.log( "fileToValidate in GET: " + fileToValidate);
-  console.log("*****************GET*****************");
-  //res.render("validator.ejs", {fileToValidate: fileToValidate});
-  res.render("validator.ejs", {fileToValidate: global.fileToValidate});
-});
-
-app.post("/startvalidator",function(req,res){
-  console.log("*****************POST*****************");
-  console.log("post to validator");
-  console.log("req.body: " + req.body);  
-  console.log("req.body.fileToValidate: " + req.body.fileToValidate);
-  global.fileToValidate = req.body.fileToValidate;
-  console.log( "post fileToValidate: " + fileToValidate );
-  console.log("*****************POST*****************");
-  res.redirect("/validator");
 });
 
 // Set placeholder values for optional FHIR resources
